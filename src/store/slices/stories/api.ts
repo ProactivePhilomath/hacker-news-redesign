@@ -1,4 +1,4 @@
-import { BASE_API_URL } from '../../const'
+import { BASE_API_URL } from '../../../const'
 import type { Id, UnixMilliseconds } from '../../types'
 import type { Story } from './types'
 
@@ -14,13 +14,14 @@ interface ApiStory {
     url: string
 }
 
-const mapApiStoryToStory = ({ id, by, time, kids, score, title }: ApiStory): Story => ({
+const mapApiStoryToStory = ({ id, by, time, kids, score, title, url }: ApiStory): Story => ({
     id,
     author: by,
     created: time * 1000,
     numberOfComments: kids?.length ?? 0,
     score,
-    title
+    title,
+    source: url
 })
 
 export const fetchStory = async (id: number): Promise<Story> => {

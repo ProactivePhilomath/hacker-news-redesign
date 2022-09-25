@@ -1,13 +1,102 @@
+/* CSS Reset */
+
+html h1 {
+    display: unset;
+    font-size: unset;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+    font-weight: unset;
+}
+
+html ol {
+    display: block;
+    list-style-type: unset;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+    padding-inline-start: unset;
+}
+
+html ul {
+    display: unset;
+    list-style-type: unset;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+    padding-inline-start: unset;
+}
+
+html li {
+    display: unset;
+    text-align: unset;
+}
+
+html button {
+    appearance: unset;
+    writing-mode: unset;
+    font-style: unset;
+    font-variant-ligatures: unset;
+    font-variant-caps: unset;
+    font-variant-numeric: unset;
+    font-variant-east-asian: unset;
+    font-weight: unset;
+    font-stretch: unset;
+    font-size: unset;
+    font-family: unset;
+    text-rendering: unset;
+    color: unset;
+    letter-spacing: unset;
+    word-spacing: unset;
+    line-height: unset;
+    text-transform: unset;
+    text-indent: unset;
+    text-shadow: unset;
+    display: unset;
+    text-align: unset;
+    align-items: unset;
+    cursor: unset;
+    box-sizing: unset;
+    background-color: unset;
+    margin: unset;
+    padding: unset;
+    border-width: unset;
+    border-style: unset;
+    border-color: unset;
+    border-image: unset;
+}
+
+
+/* Core CSS Properties */
+html {
+    font-size: 18px;
+    overflow-y: scroll;
+}
+
+
+/* Fill the screen's height
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+}
+
+#root {
+    height: 100%;
+} */
+
+/* Other*/
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }

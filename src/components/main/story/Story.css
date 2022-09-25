@@ -1,0 +1,48 @@
+.Story {
+    display: block;
+    text-align: unset;
+    line-height: 2rem;
+}
+
+.Story p {
+    display: block;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
+}
+
+.Story a {
+    color: unset;
+    cursor: pointer;
+    text-decoration: unset;
+}
+
+.Story-first-line {
+    font-size: 1rem;
+    line-height: 2rem;
+}
+
+.Story-first-line-index {
+    margin-right: 10px;
+    font-weight: 400;
+    color: var(--color-text-secondary)
+}
+
+.Story-first-line-title {
+    margin-right: 12px;
+    font-weight: 700;
+    color: var(--color-text-primary)
+}
+
+.Story-first-line-source {
+    font-size: 0.6rem;
+    font-weight: 400;
+    color: var(--color-text-secondary)
+}
+
+.Story-second-line {
+    font-size: 0.6rem;
+    line-height: 2rem;
+    color: var(--color-text-secondary)
+}

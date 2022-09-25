@@ -1,4 +1,4 @@
-import { BASE_API_URL } from '../../const'
+import { BASE_API_URL } from '../../../const'
 
 export const fetchNewStoryIds = async (): Promise<Array<number>> => {
     const url = `${BASE_API_URL}/newstories.json`

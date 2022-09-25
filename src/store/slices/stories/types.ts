@@ -6,5 +6,6 @@ export interface Story {
     created: UnixMilliseconds
     numberOfComments: number
     score: number
+    source: string
     title: string
 }
