@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
-import { Id } from '../../types'
+import { Id } from '../../../types'
 import { fetchStory } from './api'
 import type { Story } from './types'
 

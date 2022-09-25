@@ -2,11 +2,13 @@ import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
 
 import storyIdsReducer from './slices/storyIds/slice'
 import storiesReducer from './slices/stories/slice'
+import themeReducer from './slices/theme/slice'
 
 export const store = configureStore({
   reducer: {
     storyIds: storyIdsReducer,
-    stories: storiesReducer
+    stories: storiesReducer,
+    theme: themeReducer
   },
 });
 

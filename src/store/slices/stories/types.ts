@@ -1,4 +1,4 @@
-import type { UnixMilliseconds } from "../../types"
+import type { UnixMilliseconds } from "../../../types"
 
 export interface Story {
     id: number

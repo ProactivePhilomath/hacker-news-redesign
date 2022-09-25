@@ -12,8 +12,10 @@
 
 .ThemeButton svg {
     fill: var(--color-text-primary);
+    stroke: var(--color-text-primary);
 }
 
 .ThemeButton:hover svg {
     fill: var(--color-action);
+    stroke: var(--color-action);
 }
