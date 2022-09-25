@@ -30,16 +30,20 @@ export const Story: React.FunctionComponent<StoryProps> = ({
 
     return (
         <li className="Story"key={id}>
-            <p className="Story-first-line">
-                <span className="Story-first-line-index">{`${index}.`}</span>
-                <span className="Story-first-line-title">
-                    {source ? (<a href={source}>{title}</a>) : title}
-                </span>
-                {formattedSource && <span className="Story-first-line-source">{`(${formattedSource})`}</span>}
-            </p>
-            <p className="Story-second-line">
-                {`${score} points by ${author} ${formattedCreationDate} | ${numberOfComments} ${numberOfComments === 1 ? 'comment' : 'comments'}`}
-            </p>
+            <div className="Story-index">
+                <span>{`${index}.`}</span>
+            </div>
+            <div>
+                <p className="Story-first-line">
+                    <span className="Story-first-line-title">
+                        {source ? (<a href={source}>{title}</a>) : title}
+                    </span>
+                    {formattedSource && <span className="Story-first-line-source">{`(${formattedSource})`}</span>}
+                </p>
+                <p className="Story-second-line">
+                    {`${score} points by ${author} ${formattedCreationDate} | ${numberOfComments} ${numberOfComments === 1 ? 'comment' : 'comments'}`}
+                </p>
+            </div>
         </li>
     )
 }

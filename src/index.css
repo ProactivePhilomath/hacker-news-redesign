@@ -1,13 +1,21 @@
 /* CSS Reset */
 
 html h1 {
-    display: unset;
+    display: block;
     font-size: unset;
     margin-block-start: unset;
     margin-block-end: unset;
     margin-inline-start: unset;
     margin-inline-end: unset;
     font-weight: unset;
+}
+
+html p {
+    display: block;
+    margin-block-start: unset;
+    margin-block-end: unset;
+    margin-inline-start: unset;
+    margin-inline-end: unset;
 }
 
 html ol {
@@ -67,6 +75,12 @@ html button {
     border-style: unset;
     border-color: unset;
     border-image: unset;
+}
+
+html a {
+    color: unset;
+    cursor: pointer;
+    text-decoration: unset;
 }
 
 

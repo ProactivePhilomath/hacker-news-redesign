@@ -1,48 +1,48 @@
+@font-face {
+    font-family: 'Ubuntu Mono';
+    src: local('Ubuntu Mono'), url(./UbuntuMono-Regular.ttf) format('truetype');
+  }
+
 .Story {
-    display: block;
+    display: flex;
     text-align: unset;
     line-height: 2rem;
 }
 
 .Story p {
-    display: block;
-    margin-block-start: unset;
-    margin-block-end: unset;
-    margin-inline-start: unset;
-    margin-inline-end: unset;
+    line-height: 1.25rem;
 }
 
-.Story a {
-    color: unset;
-    cursor: pointer;
-    text-decoration: unset;
+.Story-index {
+    min-width: 25px;
+    margin-right: 10px;
+    font-family: 'Ubuntu Mono';
+    font-weight: 400;
+    color: var(--color-text-secondary);
+
+    display: flex;
+    justify-content: flex-end;
+    line-height: 1.4rem;
 }
 
 .Story-first-line {
     font-size: 1rem;
-    line-height: 2rem;
-}
-
-.Story-first-line-index {
-    margin-right: 10px;
-    font-weight: 400;
-    color: var(--color-text-secondary)
 }
 
 .Story-first-line-title {
     margin-right: 12px;
+    font-family: 'Ubuntu Mono';
     font-weight: 700;
-    color: var(--color-text-primary)
+    color: var(--color-text-primary);
 }
 
 .Story-first-line-source {
     font-size: 0.6rem;
     font-weight: 400;
-    color: var(--color-text-secondary)
+    color: var(--color-text-secondary);
 }
 
 .Story-second-line {
     font-size: 0.6rem;
-    line-height: 2rem;
-    color: var(--color-text-secondary)
+    color: var(--color-text-secondary);
 }

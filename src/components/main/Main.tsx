@@ -30,7 +30,7 @@ export function Main() {
 
     return (
         <main>
-            <ul>
+            <ol className="Main-stories">
                 {Object.values(stories)
                     .sort(({ created: createdA }, { created: createdB }) => createdB - createdA)
                     .map(({ id, author, created, numberOfComments, score, source, title }, index) => (
@@ -46,7 +46,7 @@ export function Main() {
                         />
                     ))
                 }
-            </ul>
+            </ol>
 
             <button className="Main-showMore-button">show more</button>
         </main>

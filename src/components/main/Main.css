@@ -1,5 +1,10 @@
+.Main-stories li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
 .Main-showMore-button {
     margin: 20px;
+    margin-left: 33px;
 
     padding: 8px 14px;
     background-color: var(--color-action);
