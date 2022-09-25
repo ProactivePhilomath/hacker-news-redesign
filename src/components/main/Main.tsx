@@ -9,6 +9,7 @@ import { Story } from './story/Story'
 import './Main.css'
 
 const INITIAL_NUMBER_OF_STORIES_TO_LOAD = 12
+const NUMBER_OF_STORIES_INCREMENT = 4
 
 export function Main() {
     const dispatch = useAppDispatch()
@@ -27,6 +28,10 @@ export function Main() {
             dispatch(requestStory(storyIds[numberOfLoadedStories]))
         }
     }, [dispatch, numberOfStories, numberOfLoadedStories, storyIds])
+
+    const increaseNumberOfStories = React.useCallback(() => {
+        setNumberOfStories(numberOfStories + NUMBER_OF_STORIES_INCREMENT)
+    }, [numberOfStories])
 
     return (
         <main>
@@ -48,7 +53,7 @@ export function Main() {
                 }
             </ol>
 
-            <button className="Main-showMore-button">show more</button>
+            <button className="Main-showMore-button" onClick={increaseNumberOfStories}>show more</button>
         </main>
     )
 }
