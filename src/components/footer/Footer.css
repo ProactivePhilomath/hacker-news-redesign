@@ -31,3 +31,7 @@
 
     font-size: 16px;
 }
+
+.Footer-link:hover {
+    color: var(--color-action);
+}
