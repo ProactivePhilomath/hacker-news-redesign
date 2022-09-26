@@ -42,7 +42,7 @@ export const Story: React.FunctionComponent<StoryProps> = ({
     })
 
     return (
-        <li className="Story"key={id}>
+        <li className="Story">
             <div className="Story-index">
                 <span>{`${index}.`}</span>
             </div>
