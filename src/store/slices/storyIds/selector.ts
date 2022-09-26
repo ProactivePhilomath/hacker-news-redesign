@@ -1,3 +1,5 @@
 import type { RootState } from '../../store'
 
-export const selectStoryIds = (state: RootState) => state.storyIds.value
+export const selectRecentStoryIds = (state: RootState) => state.storyIds.recent
+
+export const selectSavedStoryIds = (state: RootState) => state.storyIds.saved

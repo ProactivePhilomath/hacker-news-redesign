@@ -1,5 +1,7 @@
 import React from 'react'
+import classnames from 'classnames'
 
+import { ReactComponent as StarIcon } from './starIcon.svg'
 import { formatUnixTimestamp } from '../../../utils'
 import './Story.css'
 
@@ -9,24 +11,35 @@ export interface StoryProps {
     created: number
     index: number
     numberOfComments: number
+    onSave: (id: number) => void
+    saved: boolean
     score: number
     source: string
     title: string
 }
 
-// TODO: Starring
 export const Story: React.FunctionComponent<StoryProps> = ({
     id,
     author,
     created,
     index,
     numberOfComments,
+    onSave,
+    saved,
     score,
     source,
     title
 }) => {
     const formattedSource = source?.replace(/.+\/\/|www.|\/.+/g, '')
     const formattedCreationDate = formatUnixTimestamp(created)
+
+    const onSaveButtonClicked = React.useCallback(() => {
+        onSave(id)
+    }, [id, onSave])
+
+    const starIconClassNames = classnames('Story-second-line-save-icon', {
+        'Story-second-line-save-icon-saved': saved
+    })
 
     return (
         <li className="Story"key={id}>
@@ -41,7 +54,12 @@ export const Story: React.FunctionComponent<StoryProps> = ({
                     {formattedSource && <span className="Story-first-line-source">{`(${formattedSource})`}</span>}
                 </p>
                 <p className="Story-second-line">
-                    {`${score} points by ${author} ${formattedCreationDate} | ${numberOfComments} ${numberOfComments === 1 ? 'comment' : 'comments'}`}
+                    {`${score} points by ${author} ${formattedCreationDate}}`}
+                    {' | '}
+                    {`${numberOfComments} ${numberOfComments === 1 ? 'comment' : 'comments'}`}
+                    {' | '}
+                    <span className={starIconClassNames} onClick={onSaveButtonClicked}><StarIcon /></span>
+                    {` ${saved ? 'saved' : 'save'}`}
                 </p>
             </div>
         </li>

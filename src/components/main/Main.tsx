@@ -1,8 +1,8 @@
 import React from 'react'
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
-import { selectStoryIds } from '../../store/slices/storyIds/selector'
-import { requestStoryIds } from '../../store/slices/storyIds/slice'
+import { selectRecentStoryIds, selectSavedStoryIds } from '../../store/slices/storyIds/selector'
+import { requestStoryIds, toggleSaveId } from '../../store/slices/storyIds/slice'
 import { selectStories } from '../../store/slices/stories/selector'
 import { requestStory } from '../../store/slices/stories/slice'
 import { Story } from './story/Story'
@@ -13,7 +13,8 @@ const NUMBER_OF_STORIES_INCREMENT = 4
 
 export function Main() {
     const dispatch = useAppDispatch()
-    const storyIds = useAppSelector(selectStoryIds)
+    const recentStoryIds = useAppSelector(selectRecentStoryIds)
+    const savedStoryIds = useAppSelector(selectSavedStoryIds)
     const stories = useAppSelector(selectStories)
 
     const [numberOfStories, setNumberOfStories] = React.useState(INITIAL_NUMBER_OF_STORIES_TO_LOAD) // eslint-disable-line @typescript-eslint/no-unused-vars
@@ -24,14 +25,18 @@ export function Main() {
 
     const numberOfLoadedStories = Object.keys(stories).length
     React.useEffect(() => {
-        if (numberOfStories > numberOfLoadedStories && numberOfStories <= storyIds.length) {
-            dispatch(requestStory(storyIds[numberOfLoadedStories]))
+        if (numberOfStories > numberOfLoadedStories && numberOfStories <= recentStoryIds.length) {
+            dispatch(requestStory(recentStoryIds[numberOfLoadedStories]))
         }
-    }, [dispatch, numberOfStories, numberOfLoadedStories, storyIds])
+    }, [dispatch, numberOfStories, numberOfLoadedStories, recentStoryIds])
 
     const increaseNumberOfStories = React.useCallback(() => {
         setNumberOfStories(numberOfStories + NUMBER_OF_STORIES_INCREMENT)
     }, [numberOfStories])
+
+    const onSaveClicked = React.useCallback((id: number) => {
+        dispatch(toggleSaveId(id))
+    }, [dispatch])
 
     return (
         <main>
@@ -45,6 +50,8 @@ export function Main() {
                             created={created}
                             index={index + 1}
                             numberOfComments={numberOfComments}
+                            onSave={onSaveClicked}
+                            saved={savedStoryIds.includes(id)}
                             score={score}
                             source={source}
                             title={title}
