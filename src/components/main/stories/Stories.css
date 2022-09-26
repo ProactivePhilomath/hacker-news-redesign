@@ -1,8 +1,0 @@
-.Stories li:not(:last-child) {
-    margin-bottom: 20px;
-}
-
-.Stories-emptymessage {
-    padding: 20px;
-    text-align: center;
-}
