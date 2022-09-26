@@ -1,6 +1,6 @@
 import { BASE_API_URL } from '../../../const'
 import type { Id, UnixMilliseconds } from '../../../types'
-import type { Story } from './types'
+import type { Story } from '../../../types'
 
 interface ApiStory {
     id: Id

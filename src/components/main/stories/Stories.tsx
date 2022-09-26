@@ -1,6 +1,6 @@
 import React from 'react'
 
-import type { Story } from '../../../store/slices/stories/types'
+import type { Story } from '../../../types'
 import { Story as StoryComponent } from './story/Story'
 import './Stories.css'
 

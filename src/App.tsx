@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import classnames from 'classnames'
 
 import { Footer } from './components/footer/Footer'
@@ -6,7 +6,7 @@ import { Header } from './components/header/Header'
 import { Main } from './components/main/Main'
 import { useAppSelector } from './store/hooks'
 import { selectTheme } from './store/slices/theme/selector'
-import './App.css';
+import './App.css'
 
 function App() {
     const theme = useAppSelector(selectTheme)
@@ -29,4 +29,4 @@ function App() {
     )
 }
 
-export default App;
+export default App

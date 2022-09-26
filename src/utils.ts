@@ -17,4 +17,6 @@ export const formatUnixTimestamp = (unixTimestamp: number): string => {
     } else {
         return `${secondsAgo} ${secondsAgo === 1 ? 'second' : 'seconds'} ago`
     }
-} 
+}
+
+export const extractDomainFromUrl = (url: string | undefined): string | undefined => url?.replace(/.+\/\/|www.|\/.+/g, '')

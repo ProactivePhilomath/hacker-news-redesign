@@ -22,16 +22,16 @@ export function Header() {
                 <div className="Header-logo-wrapper"><Logo /></div>
                 <div className="Header-title-wrapper"><Title /></div>
                 <nav className="Header-navbar">
-                <ul>
-                    <li className={latestClassNames}>
-                        <Link to="/latest">latest</Link>
-                    </li>
-                    |
-                    <li className={starredClassNames}>
-                        <Link to="/starred">starred</Link>
-                    </li>
-                </ul>
-            </nav>
+                    <ul>
+                        <li className={latestClassNames}>
+                            <Link to="/latest">latest</Link>
+                        </li>
+                        |
+                        <li className={starredClassNames}>
+                            <Link to="/starred">starred</Link>
+                        </li>
+                    </ul>
+                </nav>
             </div>
             <div className="Header-section">
                 <ThemeButton />

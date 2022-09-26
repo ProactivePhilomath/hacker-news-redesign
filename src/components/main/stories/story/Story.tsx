@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ReactComponent as StarIcon } from './starIcon.svg'
-import { formatUnixTimestamp } from '../../../../utils'
+import { extractDomainFromUrl, formatUnixTimestamp } from '../../../../utils'
 import './Story.css'
 
 export interface StoryProps {
@@ -30,7 +30,7 @@ export const Story: React.FunctionComponent<StoryProps> = ({
     source,
     title
 }) => {
-    const formattedSource = source?.replace(/.+\/\/|www.|\/.+/g, '')
+    const formattedSource = extractDomainFromUrl(source)
     const formattedCreationDate = formatUnixTimestamp(created)
 
     const onSaveButtonClicked = React.useCallback(() => {

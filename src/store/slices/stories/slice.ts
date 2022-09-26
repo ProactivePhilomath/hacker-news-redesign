@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
 import { Id } from '../../../types'
 import { fetchStory } from './api'
-import type { Story } from './types'
+import type { Story } from '../../../types'
 
 export interface StoriesState {
     value: Record<Id, Story>,
