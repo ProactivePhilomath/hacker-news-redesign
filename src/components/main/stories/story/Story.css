@@ -36,6 +36,11 @@
     color: var(--color-text-primary);
 }
 
+.Story-first-line-title:hover {
+    color: var(--color-action);
+    cursor: pointer;
+}
+
 .Story-first-line-source {
     font-size: 0.6rem;
     font-weight: 400;
