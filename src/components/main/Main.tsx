@@ -8,8 +8,8 @@ import { requestStory } from '../../store/slices/stories/slice'
 import { Story } from './story/Story'
 import './Main.css'
 
-const INITIAL_NUMBER_OF_STORIES_TO_LOAD = 12
-const NUMBER_OF_STORIES_INCREMENT = 4
+const INITIAL_NUMBER_OF_STORIES_TO_LOAD = 10
+const NUMBER_OF_STORIES_INCREMENT = 5
 
 export function Main() {
     const dispatch = useAppDispatch()
@@ -17,7 +17,7 @@ export function Main() {
     const savedStoryIds = useAppSelector(selectSavedStoryIds)
     const stories = useAppSelector(selectStories)
 
-    const [numberOfStories, setNumberOfStories] = React.useState(INITIAL_NUMBER_OF_STORIES_TO_LOAD) // eslint-disable-line @typescript-eslint/no-unused-vars
+    const [numberOfStories, setNumberOfStories] = React.useState(INITIAL_NUMBER_OF_STORIES_TO_LOAD)
 
     React.useEffect(() => {
         dispatch(requestStoryIds())
