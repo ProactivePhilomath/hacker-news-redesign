@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
 import { useAppSelector } from '../../../store/hooks'
 import { selectTheme } from '../../../store/slices/theme/selector';
@@ -10,5 +11,9 @@ export const Title = () => {
 
     const titleLogo = theme === 'light' ? hackerNewsLogoBlack : hackerNewsLogoWhite
 
-    return <img src={titleLogo} alt="Hacker News" />
+    return (
+        <Link to="/">
+            <img src={titleLogo} alt="Hacker News" />
+        </Link>
+    )
 } 

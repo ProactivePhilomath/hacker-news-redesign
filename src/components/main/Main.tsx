@@ -1,4 +1,5 @@
 import React from 'react'
+import { Route, Switch } from 'react-router-dom'
 
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { selectRecentStoryIds, selectSavedStoryIds } from '../../store/slices/storyIds/selector'
@@ -16,7 +17,8 @@ export function Main() {
     const dispatch = useAppDispatch()
     const recentStoryIds = useAppSelector(selectRecentStoryIds)
     const savedStoryIds = useAppSelector(selectSavedStoryIds)
-    const stories = useAppSelector(selectStories)
+    const stories = Object.values(useAppSelector(selectStories))
+    const savedStories = stories.filter(({ id }) => savedStoryIds.includes(id) )
 
     const [numberOfStories, setNumberOfStories] = React.useState(INITIAL_NUMBER_OF_STORIES_TO_LOAD)
 
@@ -24,7 +26,7 @@ export function Main() {
         dispatch(requestStoryIds())
     }, [dispatch])
 
-    const numberOfLoadedStories = Object.keys(stories).length
+    const numberOfLoadedStories = stories.length
     React.useEffect(() => {
         if (numberOfStories > numberOfLoadedStories && numberOfStories <= recentStoryIds.length) {
             dispatch(requestStory(recentStoryIds[numberOfLoadedStories]))
@@ -41,11 +43,22 @@ export function Main() {
 
     return (
         <main>
-            <Stories
-                onSaveClicked={onSaveClicked}
-                stories={Object.values(stories)}
-                savedStoryIds={savedStoryIds}
-            />
+            <Switch>
+                <Route path="/starred">
+                    <Stories
+                        onSaveClicked={onSaveClicked}
+                        stories={savedStories}
+                        savedStoryIds={savedStoryIds}
+                    />
+                </Route>
+                <Route path="/">
+                    <Stories
+                        onSaveClicked={onSaveClicked}
+                        stories={stories}
+                        savedStoryIds={savedStoryIds}
+                    />
+                </Route>
+            </Switch>
             <button className="Main-showMore-button" onClick={increaseNumberOfStories}>show more</button>
         </main>
     )

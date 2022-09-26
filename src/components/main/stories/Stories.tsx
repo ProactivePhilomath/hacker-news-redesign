@@ -20,18 +20,20 @@ export const Stories: React.FunctionComponent<StoriesProps> = ({
                 {stories
                     .sort(({ created: createdA }, { created: createdB }) => createdB - createdA)
                     .map(({ id, author, created, numberOfComments, score, source, title }, index) => (
-                        <StoryComponent
-                            id={id}
-                            author={author}
-                            created={created}
-                            index={index + 1}
-                            numberOfComments={numberOfComments}
-                            onSave={onSaveClicked}
-                            saved={savedStoryIds.includes(id)}
-                            score={score}
-                            source={source}
-                            title={title}
-                        />
+                        <React.Fragment key={id}>
+                            <StoryComponent
+                                id={id}
+                                author={author}
+                                created={created}
+                                index={index + 1}
+                                numberOfComments={numberOfComments}
+                                onSave={onSaveClicked}
+                                saved={savedStoryIds.includes(id)}
+                                score={score}
+                                source={source}
+                                title={title}
+                            />
+                        </React.Fragment>
                     ))
                 }
             </ol>

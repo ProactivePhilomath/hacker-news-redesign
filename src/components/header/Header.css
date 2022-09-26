@@ -37,6 +37,6 @@
 }
 
 .Header-navbar-selected-item {
-    font-weight: 800;
+    font-weight: 700;
     color: var(--color-action);
 }
