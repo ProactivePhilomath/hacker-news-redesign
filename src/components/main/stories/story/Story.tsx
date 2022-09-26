@@ -2,7 +2,7 @@ import React from 'react'
 import classnames from 'classnames'
 
 import { ReactComponent as StarIcon } from './starIcon.svg'
-import { formatUnixTimestamp } from '../../../utils'
+import { formatUnixTimestamp } from '../../../../utils'
 import './Story.css'
 
 export interface StoryProps {

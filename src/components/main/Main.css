@@ -1,7 +1,3 @@
-.Main-stories li:not(:last-child) {
-    margin-bottom: 20px;
-}
-
 .Main-showMore-button {
     margin: 20px;
     margin-left: 33px;

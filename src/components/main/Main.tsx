@@ -5,8 +5,9 @@ import { selectRecentStoryIds, selectSavedStoryIds } from '../../store/slices/st
 import { requestStoryIds, toggleSaveId } from '../../store/slices/storyIds/slice'
 import { selectStories } from '../../store/slices/stories/selector'
 import { requestStory } from '../../store/slices/stories/slice'
-import { Story } from './story/Story'
+
 import './Main.css'
+import { Stories } from './stories/Stories'
 
 const INITIAL_NUMBER_OF_STORIES_TO_LOAD = 10
 const NUMBER_OF_STORIES_INCREMENT = 5
@@ -40,26 +41,11 @@ export function Main() {
 
     return (
         <main>
-            <ol className="Main-stories">
-                {Object.values(stories)
-                    .sort(({ created: createdA }, { created: createdB }) => createdB - createdA)
-                    .map(({ id, author, created, numberOfComments, score, source, title }, index) => (
-                        <Story
-                            id={id}
-                            author={author}
-                            created={created}
-                            index={index + 1}
-                            numberOfComments={numberOfComments}
-                            onSave={onSaveClicked}
-                            saved={savedStoryIds.includes(id)}
-                            score={score}
-                            source={source}
-                            title={title}
-                        />
-                    ))
-                }
-            </ol>
-
+            <Stories
+                onSaveClicked={onSaveClicked}
+                stories={Object.values(stories)}
+                savedStoryIds={savedStoryIds}
+            />
             <button className="Main-showMore-button" onClick={increaseNumberOfStories}>show more</button>
         </main>
     )
