@@ -46,6 +46,7 @@ export function Main() {
             <Switch>
                 <Route path="/starred">
                     <Stories
+                        emptyMessage="None! Try saving some stories"
                         onSaveClicked={onSaveClicked}
                         stories={savedStories}
                         savedStoryIds={savedStoryIds}
@@ -53,13 +54,14 @@ export function Main() {
                 </Route>
                 <Route path="/">
                     <Stories
+                        emptyMessage="Loading the latest stories..."
                         onSaveClicked={onSaveClicked}
-                        stories={stories}
+                        stories={stories.length < INITIAL_NUMBER_OF_STORIES_TO_LOAD ? [] : stories}
                         savedStoryIds={savedStoryIds}
                     />
+                    <button className="Main-showMore-button" onClick={increaseNumberOfStories}>show more</button>
                 </Route>
             </Switch>
-            <button className="Main-showMore-button" onClick={increaseNumberOfStories}>show more</button>
         </main>
     )
 }

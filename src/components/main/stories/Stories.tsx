@@ -5,16 +5,22 @@ import { Story as StoryComponent } from './story/Story'
 import './Stories.css'
 
 export interface StoriesProps {
+    emptyMessage?: string
     onSaveClicked: (id: number) => void
     stories: Array<Story>,
     savedStoryIds: Array<number>
 }
 
 export const Stories: React.FunctionComponent<StoriesProps> = ({
+    emptyMessage,
     onSaveClicked,
     stories,
     savedStoryIds
 }) => {
+    if (emptyMessage && stories.length === 0) {
+        return <p className="Stories-emptymessage">{emptyMessage}</p>
+    }
+
     return (
         <ol className="Stories">
                 {stories
